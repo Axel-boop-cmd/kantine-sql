@@ -35,14 +35,8 @@ body {
 
 .meny-lenker {
   display: grid;
-  grid-auto-flow: column;
-  align-items: center;
+  grid-template-columns: repeat(4, auto);
   gap: 8px;
-}
-
-.meny-bruker {
-  color: var(--hvit);
-  padding: 8px 4px 8px 16px;
 }
 
 .meny-lenke {
@@ -137,103 +131,4 @@ body {
   font-size: 0.85rem;
   color: gray;
   margin: 4px 0;
-}
-
-/* ===== Skjema (logg inn og registrer) ===== */
-
-.skjema-boks {
-  max-width: 380px;
-  margin: 40px auto;
-  background-color: var(--hvit);
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-  border-top: 6px solid var(--oransje);
-  text-align: center;
-}
-
-.skjema-tittel {
-  margin: 0 0 4px;
-  color: var(--oransje);
-}
-
-.skjema-undertekst {
-  margin: 0 0 24px;
-  color: gray;
-}
-
-.skjema {
-  display: grid;
-  gap: 6px;
-  text-align: left;
-}
-
-.skjema-etikett {
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: var(--svart);
-  margin-top: 10px;
-}
-
-.skjema-felt {
-  padding: 10px 14px;
-  font-size: 1rem;
-  border: 2px solid #ddd;
-  border-radius: 12px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.skjema-felt:focus {
-  outline: none;
-  border-color: var(--oransje);
-  box-shadow: 0 0 0 3px rgba(255, 140, 26, 0.25);
-}
-
-.skjema-knapp {
-  display: block;
-  margin-top: 20px;
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--hvit);
-  background-color: var(--oransje);
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.2s, transform 0.1s;
-}
-
-.skjema-knapp:hover {
-  background-color: #e67a00;
-}
-
-.skjema-knapp:active {
-  transform: scale(0.98);
-}
-
-.skjema-feil {
-  background-color: #ffe5e5;
-  color: #b00020;
-  border-radius: 12px;
-  padding: 10px;
-  margin: 0 0 12px;
-  font-size: 0.9rem;
-}
-
-.skjema-bytt {
-  margin: 20px 0 0;
-  font-size: 0.9rem;
-  color: gray;
-}
-
-.skjema-bytt a {
-  color: var(--oransje);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.skjema-bytt a:hover {
-  text-decoration: underline;
 }

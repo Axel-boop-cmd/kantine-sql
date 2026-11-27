@@ -14,13 +14,8 @@
         <a class="meny-lenke" href="/varer">Varer</a>
         <a class="meny-lenke" href="/kontakter">Kontakt oss her</a>
         <a class="meny-lenke" href="/meny">Meny</a>
-        {% if session.navn %}
-        <span class="meny-bruker">Hei, {{ session.navn }}</span>
-        <a class="meny-lenke" href="/logout">Logg ut</a>
-        {% else %}
         <a class="meny-lenke" href="/register">Registrer</a>
         <a class="meny-lenke" href="/login">Logg inn</a>
-        {% endif %}
       </nav>
     </header>
     <main class="innhold">{% block content %}{% endblock %}</main>

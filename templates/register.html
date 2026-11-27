@@ -1,25 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}Registrer{% endblock %}
-
 {% block content %}
-<div class="skjema-boks">
-    <h2 class="skjema-tittel">Registrer ny kunde</h2>
-    <p class="skjema-undertekst">Lag en bruker for å komme i gang.</p>
+<h2>Registrer ny kunde</h2>
+<form method="POST">
+    <label for="navn">Navn</label>
+    <input type="text" id="navn" name="navn" required><br>
 
-    <form method="POST" class="skjema">
-        <label class="skjema-etikett" for="navn">Navn</label>
-        <input class="skjema-felt" type="text" id="navn" name="navn" autocomplete="name" required>
+    <label for="brukernavn">Brukernavn</label>
+    <input type="text" id="brukernavn" name="brukernavn" required><br>
 
-        <label class="skjema-etikett" for="brukernavn">Brukernavn</label>
-        <input class="skjema-felt" type="text" id="brukernavn" name="brukernavn" autocomplete="username" required>
+    <label for="passord">Passord</label>
+    <input type="password" id="passord" name="passord" required><br>
 
-        <label class="skjema-etikett" for="passord">Passord</label>
-        <input class="skjema-felt" type="password" id="passord" name="passord" autocomplete="new-password" required>
-
-        <button class="skjema-knapp" type="submit">Registrer</button>
-    </form>
-
-    <p class="skjema-bytt">Har du allerede bruker? <a href="/login">Logg inn her</a></p>
-</div>
+    <button type="submit">Registrer</button>
+</form>
 {% endblock %}

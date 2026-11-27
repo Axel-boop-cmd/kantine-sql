@@ -1,10 +1,9 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect
 import mysql.connector
 from data import varer,ukensmeny,kontakt
 
 
 app = Flask(__name__)
-app.secret_key = "9243ee02080c0ac255893fa62c58f4ca493e8ab52b26e04a8778b035ff6f1e70"  # trengs for at innloggingen (session) skal huskes
 
 def get_conn():
     return mysql.connector.connect(
@@ -69,18 +68,11 @@ def login():
         conn.close()
 
         if user:
-            session["navn"] = user[0]
-            session["brukernavn"] = brukernavn
             return render_template("welcome.html", name=user[0])
         else:
             feil = "Feil brukernavn eller passord"
 
     return render_template("login.html", feil=feil)
-
-@app.route("/logout")
-def logout():
-    session.clear()
-    return redirect("/")
 
 
 if __name__ == "__main__":
