@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Hjemmeside{% endblock %}
+
+{% block content %}
+
+<div class="velkommen">
+    <h2 class="side-tittel">Velkommen{% if session.navn %}, {{ session.navn }}{% endif %}
+    </h2>
+    <p class="velkommen-tekst">
+Her får du god mat og drikke til elevvennlige priser. Vi har 10 drikkevarer, 10 matvarer og en ny varmrett hver dag.
+    </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Kantina{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header class="topp">
+      <h1 class="logo">Kantina</h1>
+      <nav class="meny-lenker">
+        <a class="meny-lenke" href="/">Hjem</a>
+        <a class="meny-lenke" href="/varer">Varer</a>
+        <a class="meny-lenke" href="/kontakter">Kontakt oss her</a>
+        <a class="meny-lenke" href="/meny">Meny</a>
+        {% if session.navn %}
+        <span class="meny-bruker">Hei, {{ session.navn }}</span>
+        <a class="meny-lenke" href="/logout">Logg ut</a>
+        {% else %}
+        <a class="meny-lenke" href="/register">Registrer</a>
+        <a class="meny-lenke" href="/login">Logg inn</a>
+        {% endif %}
+      </nav>
+    </header>
+    <main class="innhold">{% block content %}{% endblock %}</main>
+    <footer class="bunn">
+      <p class="bunn-tekst">© 2026 Kantina</p>
+    </footer>
+  </body>
+</html>

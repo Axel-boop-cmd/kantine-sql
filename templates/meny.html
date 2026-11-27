@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Meny {% endblock %}
+
+{% block content %}
+    <h2 class="side-tittel">Ukens meny</h2>
+    <div class="ukemeny">
+
+    {% for rett in ukensmeny %}
+        <div class="rett-kort">
+            <h1 class="rett-dag">{{ rett.dag }}</h1>
+            <img class="rett-bilde" src="{{ rett.bilde }}" alt="{{ rett.navn }}">
+            <p class="info">{{ rett.kalorier }} kcal</p>
+            <p class="info">Allergener: {{ rett.allergener }}</p>
+            <p class="rett-pris">{{ rett.pris }}</p>
+        </div>
+    {% endfor %}
+
+    </div>
+
+{% endblock %}

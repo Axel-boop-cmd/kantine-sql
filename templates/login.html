@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Logg inn{% endblock %}
+
+{% block content %}
+<div class="skjema-boks">
+    <h2 class="skjema-tittel">Logg inn</h2>
+    <p class="skjema-undertekst">Velkommen tilbake til Kantina!</p>
+
+    {% if feil %}
+        <p class="skjema-feil">{{ feil }}</p>
+    {% endif %}
+
+    <form method="POST" class="skjema">
+        <label class="skjema-etikett" for="brukernavn">Brukernavn</label>
+        <input class="skjema-felt" type="text" id="brukernavn" name="brukernavn" autocomplete="username" required>
+
+        <label class="skjema-etikett" for="passord">Passord</label>
+        <input class="skjema-felt" type="password" id="passord" name="passord" autocomplete="current-password" required>
+
+        <button class="skjema-knapp" type="submit">Logg inn</button>
+    </form>
+
+    <p class="skjema-bytt">Har du ikke bruker? <a href="/register">Registrer deg her</a></p>
+</div>
+{% endblock %}

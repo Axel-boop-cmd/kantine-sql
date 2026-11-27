@@ -1,0 +1,239 @@
+/* ===== Farger ===== */
+
+:root {
+  --oransje: #ff8c1a;
+  --svart: #111111;
+  --hvit: #ffffff;
+}
+
+/* ===== Hele siden ===== */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, var(--oransje), var(--svart) 85%);
+  background-attachment: fixed;
+}
+
+/* ===== Topp ===== */
+
+.topp {
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 16px 32px;
+  color: var(--hvit);
+}
+
+.logo {
+  margin: 0;
+}
+
+.meny-lenker {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.meny-bruker {
+  color: var(--hvit);
+  padding: 8px 4px 8px 16px;
+}
+
+.meny-lenke {
+  color: var(--hvit);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.meny-lenke:hover {
+  background-color: var(--hvit);
+  color: var(--oransje);
+}
+
+/* ===== Innhold ===== */
+
+.innhold {
+  grid-row: 2;
+  padding: 32px;
+}
+
+.side-tittel,
+.kategori-tittel {
+  color: var(--hvit);
+}
+
+/* ===== Bunn ===== */
+
+.bunn {
+  grid-row: 3;
+  background-color: var(--svart);
+  color: var(--hvit);
+  text-align: center;
+  padding: 16px;
+}
+
+/* ===== Hvite bokser og kort ===== */
+
+.velkommen,
+.kontakt,
+.vare-kort,
+.rett-kort {
+  background-color: var(--hvit);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.velkommen .side-tittel {
+  color: var(--oransje);
+}
+
+/* ===== Rutenett med kort (varer og meny) ===== */
+
+.vare-liste,
+.ukemeny {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* minmax for hvert kort minst 180px og at den fyller ut tomrom*/
+  gap: 20px;
+}
+
+.vare-kort,
+.rett-kort {
+  text-align: center;
+}
+
+.vare-bilde,
+.rett-bilde {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.vare-pris,
+.rett-pris {
+  display: inline-block;
+  background-color: var(--oransje);
+  color: var(--hvit);
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.rett-dag {
+  color: var(--oransje);
+}
+
+/* ===== Kalorier og allergener ===== */
+
+.info {
+  font-size: 0.85rem;
+  color: gray;
+  margin: 4px 0;
+}
+
+/* ===== Skjema (logg inn og registrer) ===== */
+
+.skjema-boks {
+  max-width: 380px;
+  margin: 40px auto;
+  background-color: var(--hvit);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  border-top: 6px solid var(--oransje);
+  text-align: center;
+}
+
+.skjema-tittel {
+  margin: 0 0 4px;
+  color: var(--oransje);
+}
+
+.skjema-undertekst {
+  margin: 0 0 24px;
+  color: gray;
+}
+
+.skjema {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+}
+
+.skjema-etikett {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--svart);
+  margin-top: 10px;
+}
+
+.skjema-felt {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.skjema-felt:focus {
+  outline: none;
+  border-color: var(--oransje);
+  box-shadow: 0 0 0 3px rgba(255, 140, 26, 0.25);
+}
+
+.skjema-knapp {
+  display: block;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--hvit);
+  background-color: var(--oransje);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.skjema-knapp:hover {
+  background-color: #e67a00;
+}
+
+.skjema-knapp:active {
+  transform: scale(0.98);
+}
+
+.skjema-feil {
+  background-color: #ffe5e5;
+  color: #b00020;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+}
+
+.skjema-bytt {
+  margin: 20px 0 0;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.skjema-bytt a {
+  color: var(--oransje);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.skjema-bytt a:hover {
+  text-decoration: underline;
+}

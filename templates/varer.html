@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Varer
+{% endblock %}
+
+{% block content %}
+<h2 class="side-tittel">Varer</h2>
+<div class="varer">
+{% for kategori, liste in varer.items() %}
+    <div class="kategori">
+        <h3 class="kategori-tittel">{{ kategori }}</h3>
+        <div class="vare-liste">
+        {% for ting in liste %}
+            <div class="vare-kort">
+                <img class="vare-bilde" src="{{ ting.bilde }}" alt="{{ ting.navn }}">
+                <h3 class="vare-navn">{{ ting.navn }}</h3>
+                <p class="info">{{ ting.kalorier }} kcal</p>
+                <p class="info">Allergener: {{ ting.allergener }}</p>
+                <p class="vare-pris">{{ ting.pris }} kr</p>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
