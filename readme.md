@@ -40,7 +40,4 @@ CREATE TABLE kunder (
 - `templates/welcome.html`: siden du ser når du har logget inn
 - `templates/base.html`: lenker til de nye sidene i menyen
 
-## Ting som kan bli bedre
 
-- Passordene lagres som vanlig tekst i databasen. De burde krypteres (hashes).
-- Hvis noen prøver å registrere et brukernavn som allerede finnes, får de en feilside.
